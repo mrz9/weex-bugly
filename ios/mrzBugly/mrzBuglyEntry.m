@@ -7,6 +7,8 @@
 #import "mrzBuglyWebModule.h"
 #import "WeexInitManager.h"
 #import <WebKit/WKWebView.h>
+#import <Bugly/Bugly.h>
+#import "Config.h"
 
 WEEX_PLUGIN_INIT(mrzBuglyEntry)
 @implementation mrzBuglyEntry
