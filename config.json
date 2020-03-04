@@ -1,6 +1,5 @@
 {
-	"desc": "对bugly封装",
-	"requireFormatName": "eeuiBugly",
-	"requireName": "mrz/bugly",
-	"title": "bugly"
+	"desc": "bugly封装",
+	"requireFormatName": "mrzBugly",
+	"requireName": "mrz/bugly"
 }

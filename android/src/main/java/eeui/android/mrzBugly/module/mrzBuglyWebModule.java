@@ -1,4 +1,4 @@
-package eeui.android.bugly.module;
+package eeui.android.mrzBugly.module;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -10,7 +10,7 @@ import app.eeui.framework.extend.view.webviewBridge.JsCallback;
 /**
  * web-view模块组件
  */
-public class WebbuglyModule {
+public class mrzBuglyWebModule {
 
     /**
      * 简单演示

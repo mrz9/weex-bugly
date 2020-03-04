@@ -1,15 +1,15 @@
 //
-//  buglyEntry.m
+//  mrzBuglyEntry.m
 //  Pods
 //
 
-#import "buglyEntry.h"
+#import "mrzBuglyEntry.h"
+#import "mrzBuglyWebModule.h"
 #import "WeexInitManager.h"
-#import <Bugly/Bugly.h>
-#import "Config.h"
+#import <WebKit/WKWebView.h>
 
-WEEX_PLUGIN_INIT(buglyEntry)
-@implementation buglyEntry
+WEEX_PLUGIN_INIT(mrzBuglyEntry)
+@implementation mrzBuglyEntry
 
 //启动成功
 - (void) didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -22,7 +22,6 @@ WEEX_PLUGIN_INIT(buglyEntry)
 
         [Bugly startWithAppId:appKey];
     }
-    
 }
 
 //注册推送成功调用
@@ -59,6 +58,18 @@ WEEX_PLUGIN_INIT(buglyEntry)
 - (void) openURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options
 {
     
+}
+
+//捕捉握手
+- (void) handleOpenURL:(NSURL *)url
+{
+
+}
+
+//webView初始化
+- (void) setJSCallModule:(JSCallCommon *)callCommon webView:(WKWebView*)webView
+{
+    [callCommon setJSCallAssign:webView name:@"mrzBugly" bridge:[[mrzBuglyWebModule alloc] init]];
 }
 
 @end

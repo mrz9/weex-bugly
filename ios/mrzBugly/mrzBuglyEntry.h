@@ -1,10 +1,10 @@
 //
-//  buglyEntry.h
+//  mrzBuglyEntry.h
 //  Pods
 //
 
 #import <Foundation/Foundation.h>
 
-@interface buglyEntry : NSObject
+@interface mrzBuglyEntry : NSObject
 
 @end

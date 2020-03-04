@@ -1,15 +1,15 @@
 //
-//  WebbuglyModule.m
+//  mrzBuglyWebModule.m
 //  Pods
 //
 
-#import "WebbuglyModule.h"
+#import "mrzBuglyWebModule.h"
 
-@interface WebbuglyModule ()
+@interface mrzBuglyWebModule ()
 
 @end
 
-@implementation WebbuglyModule
+@implementation mrzBuglyWebModule
 
 //简单
 - (void)simple:(NSString*)msg
