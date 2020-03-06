@@ -1,7 +1,7 @@
 /*
  * @Author: Dayao
  * @Date: 2020-03-04 11:30:05
- * @LastEditTime: 2020-03-04 11:37:03
+ * @LastEditTime: 2020-03-06 12:03:19
  * @Description: 
  */
 package eeui.android.mrzBugly.entry;
@@ -33,10 +33,11 @@ public class mrzBuglyEntry {
 
         //1、注册weex模块
         try {
-            JSONObject bugly = eeuiJson.parseObject(eeuiBase.config.getObject("bugly").get("android"));
-            
-            if (eeuiJson.getBoolean(bugly, "enabled")) {
-                CrashReport.initCrashReport(content, eeuiJson.getString(bugly, "appKey"), false);
+            JSONObject buglyConfig = eeuiJson.parseObject(eeuiBase.config.getObject("bugly").get("android"));
+            String appKey = eeuiJson.getString(buglyConfig, "appKey");
+
+            if (appKey != null && appKey.length() != 0) {
+                CrashReport.initCrashReport(content, appKey, BuildConfig.DEBUG);
             }
             WXSDKEngine.registerModule("mrzBugly", mrzBuglyAppModule.class);
         } catch (WXException e) {

@@ -16,12 +16,12 @@ WEEX_PLUGIN_INIT(mrzBuglyEntry)
 //启动成功
 - (void) didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    NSMutableDictionary *bugly = [[Config getObject:@"bugly"] objectForKey:@"ios"];
-    NSString *enabled = [NSString stringWithFormat:@"%@", bugly[@"enabled"]];
-    
-    if ([enabled containsString:@"1"] || [enabled containsString:@"true"]) {
-        NSString *appKey = [NSString stringWithFormat:@"%@", bugly[@"appKey"]];
+    NSMutableDictionary *buglyConfig = [[Config getObject:@"bugly"] objectForKey:@"ios"];
 
+    NSString *appKey = [NSString stringWithFormat:@"%@", buglyConfig[@"appKey"]];
+    NSString *nullString = @"(null)";
+
+    if (![appKey isEqualToString:nullString] && appKey.length) {
         [Bugly startWithAppId:appKey];
     }
 }
