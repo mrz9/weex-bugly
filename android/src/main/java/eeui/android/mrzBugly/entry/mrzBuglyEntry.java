@@ -1,7 +1,7 @@
 /*
  * @Author: Dayao
  * @Date: 2020-03-04 11:30:05
- * @LastEditTime: 2020-03-06 12:03:19
+ * @LastEditTime: 2020-03-06 14:58:40
  * @Description: 
  */
 package eeui.android.mrzBugly.entry;
@@ -21,6 +21,7 @@ import com.tencent.bugly.crashreport.CrashReport;
 import com.alibaba.fastjson.JSONObject;
 import app.eeui.framework.extend.module.eeuiBase;
 import app.eeui.framework.extend.module.eeuiJson;
+import app.eeui.framework.BuildConfig;
 
 @ModuleEntry
 public class mrzBuglyEntry {
